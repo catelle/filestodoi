@@ -1,0 +1,107 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--background-start-rgb);
+  color: var(--foreground-rgb);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  background-color: var(--background-end-rgb);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.printableArea {
+  width: 100%;
+  max-width: 800px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.navButton {
+  background-color: #fff;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.navButton:hover {
+  background-color: #f8f9fa;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printableArea, .printableArea * {
+    visibility: visible;
+  }
+  .printableArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .button, .buttonContainer {
+    display: none;
+  }
+}
